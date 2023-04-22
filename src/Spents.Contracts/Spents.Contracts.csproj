@@ -5,21 +5,21 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Description>Spents Domain</Description>
+    <Description>Spents Contracts</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression> AFL-1.1</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>27566574.jpg</PackageIcon>
-    <Version>1.2.3</Version>
+    <Version>1.0.1</Version>
     <Authors>Felipe Mattioli dos Santos</Authors>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\Users\Felipe Santos\Desktop\27566574.jpg">
+    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\..\..\spents-events\README.md">
+    <None Include="..\..\27566574.jpg">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

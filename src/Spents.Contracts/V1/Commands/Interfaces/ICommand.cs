@@ -2,7 +2,7 @@
 {
     public interface ICommand
     {
-        Guid Id { get; }
-        DateTime CreateDate { get; }
+        string RoutingKey { get; }
+        DateTime CommandCreatedDate { get; }
     }
 }

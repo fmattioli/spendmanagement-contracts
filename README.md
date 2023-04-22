@@ -1,5 +1,5 @@
 # spents-contracts
-The Spents contracts was created for the purpose of being a package that contains the commands and the documents related to the spents project.
+The Spents contracts was created for the purpose of being a package that contains the commands and the events related to the spents project.
 
 
 # Related projects

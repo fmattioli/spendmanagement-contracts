@@ -2,7 +2,7 @@
 {
     public interface IEvent
     {
-        public Guid Id { get;}
-        public DateTime CreatedDate { get; }
+        string RoutingKey { get; }
+        DateTime EventCreatedDate { get; }
     }
 }

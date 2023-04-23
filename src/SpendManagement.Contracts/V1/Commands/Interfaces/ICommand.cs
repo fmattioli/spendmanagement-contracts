@@ -1,4 +1,4 @@
-﻿namespace Spents.Contracts.V1.Commands.Interfaces
+﻿namespace SpendManagement.Contracts.V1.Commands.Interfaces
 {
     public interface ICommand
     {

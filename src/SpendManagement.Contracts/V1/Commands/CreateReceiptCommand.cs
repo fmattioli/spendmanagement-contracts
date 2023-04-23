@@ -1,8 +1,8 @@
-﻿using Spents.Contracts.V1.Base;
-using Spents.Contracts.V1.Commands.Interfaces;
+﻿using SpendManagement.Contracts.V1.Base;
+using SpendManagement.Contracts.V1.Commands.Interfaces;
 using System.Runtime.Serialization;
 
-namespace Spents.Contracts.V1.Commands
+namespace SpendManagement.Contracts.V1.Commands
 {
     [DataContract]
     public class CreateReceiptCommand : IReceipt, ICommand

@@ -1,4 +1,4 @@
-﻿namespace Spents.Contracts.V1.Base
+﻿namespace SpendManagement.Contracts.V1.Base
 {
     public interface IReceipt
     {

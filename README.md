@@ -3,10 +3,9 @@ The SpendManagement contracts was created for the purpose of being a package tha
 
 
 # Related projects
-> https://github.com/fmattioli/SpendManagement-api <br/>
-> https://github.com/fmattioli/SpendManagement-readmodel <br/>
-> https://github.com/fmattioli/SpendManagement-eventsourcing <br/>
+> https://github.com/fmattioli/spendmanagement-api <br/>
+> https://github.com/fmattioli/spendmanagement-domain <br/>
+> https://github.com/fmattioli/spendmanagement-eventsourcing <br/>
 
 # Related packages
-> https://github.com/fmattioli/SpendManagement-Topics <br/>
-> https://github.com/fmattioli/Spent-Events <br/>
+> https://github.com/fmattioli/spendmanagement-topics <br/>

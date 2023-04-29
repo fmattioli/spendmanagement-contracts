@@ -4,9 +4,9 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events
 {
-    public class ReceiptCreatedEvent : IReceipt, IEvent
+    public class CreatedReceiptEvent : IReceipt, IEvent
     {
-        public ReceiptCreatedEvent()
+        public CreatedReceiptEvent()
         {
             EventCreatedDate = DateTime.UtcNow;
         }

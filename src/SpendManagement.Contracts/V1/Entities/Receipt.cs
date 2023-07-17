@@ -1,4 +1,4 @@
-﻿namespace SpendManagement.Contracts.V1.Base
+﻿namespace SpendManagement.Contracts.V1.Entities
 {
     public class Receipt
     {

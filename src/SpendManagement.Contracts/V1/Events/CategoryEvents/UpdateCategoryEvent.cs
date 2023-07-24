@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events.CategoryEvents
 {
-    public class CreateCategoryEvents : IEvent
+    public class UpdateCategoryEvent : IEvent
     {
         [IgnoreDataMember]
         public string RoutingKey => Category.Id.ToString();

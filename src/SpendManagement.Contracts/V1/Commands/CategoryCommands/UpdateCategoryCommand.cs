@@ -2,15 +2,15 @@
 using SpendManagement.Contracts.V1.Interfaces;
 using System.Runtime.Serialization;
 
-namespace SpendManagement.Contracts.V1.Events.CategoryEvents
+namespace SpendManagement.Contracts.V1.Commands.CategoryCommands
 {
-    public class CreateCategoryEvents : IEvent
+    public class UpdateCategoryCommand : ICommand
     {
         [IgnoreDataMember]
         public string RoutingKey => Category.Id.ToString();
 
         [IgnoreDataMember]
-        public DateTime EventCreatedDate { get; set; }
+        public DateTime CommandCreatedDate { get; set; }
 
         [DataMember(Order = 1)]
         public Category Category { get; set; } = null!;

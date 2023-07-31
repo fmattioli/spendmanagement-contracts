@@ -1,5 +1,5 @@
 # SpendManagement-contracts
-The SpendManagement contracts was created for the purpose of being a package that contains the commands and the events related to the SpendManagement project.
+The SpendManagement contracts was created with the purpose of being a package that contains the commands and the events definitions related to the SpendManagement project.
 
 
 # Related projects

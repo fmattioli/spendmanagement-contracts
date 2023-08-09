@@ -5,8 +5,15 @@ namespace SpendManagement.Contracts.V1.Commands.ReceiptCommands
 {
     public class DeleteReceiptCommand : ICommand
     {
+        public DeleteReceiptCommand(string routingKey, Guid id)
+        {
+            CommandCreatedDate = DateTime.UtcNow;
+            RoutingKey = routingKey;
+            Id = id;
+        }
+
         [IgnoreDataMember]
-        public string RoutingKey => Id.ToString();
+        public string RoutingKey { get; set; }
 
         [IgnoreDataMember]
         public DateTime CommandCreatedDate { get; set; }

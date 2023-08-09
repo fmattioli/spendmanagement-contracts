@@ -6,13 +6,16 @@ namespace SpendManagement.Contracts.V1.Commands.ReceiptCommands
 {
     public class UpdateReceiptCommand : ICommand
     {
-        public UpdateReceiptCommand()
+        public UpdateReceiptCommand(string routingKey, Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
         {
             CommandCreatedDate = DateTime.UtcNow;
+            RoutingKey = routingKey;
+            Receipt = receipt;
+            ReceiptItems = receiptItems;
         }
 
         [IgnoreDataMember]
-        public string RoutingKey => Receipt.Id.ToString();
+        public string RoutingKey { get; set; }
 
         [IgnoreDataMember]
         public DateTime CommandCreatedDate { get; set; }

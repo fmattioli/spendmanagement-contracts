@@ -6,13 +6,16 @@ namespace SpendManagement.Contracts.V1.Events.ReceiptEvents
 {
     public class UpdateReceiptEvent : IEvent
     {
-        public UpdateReceiptEvent()
+        public UpdateReceiptEvent(string routingKey, Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
         {
+            RoutingKey = routingKey;
+            Receipt = receipt;
+            ReceiptItems = receiptItems;
             EventCreatedDate = DateTime.UtcNow;
         }
 
         [IgnoreDataMember]
-        public string RoutingKey => Receipt.Id.ToString();
+        public string RoutingKey { get; set; }
 
         [IgnoreDataMember]
         public DateTime EventCreatedDate { get; set; }

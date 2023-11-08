@@ -6,9 +6,9 @@ namespace SpendManagement.Contracts.V1.Events.CategoryEvents
 {
     public class UpdateCategoryEvent : IEvent
     {
-        public UpdateCategoryEvent(string routingKey, Category category)
+        public UpdateCategoryEvent(Category category)
         {
-            RoutingKey = routingKey;
+            RoutingKey = category.Id.ToString();
             Category = category;
             EventCreatedDate = DateTime.UtcNow;
         }

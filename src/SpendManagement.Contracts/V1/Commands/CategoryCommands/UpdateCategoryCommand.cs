@@ -6,9 +6,9 @@ namespace SpendManagement.Contracts.V1.Commands.CategoryCommands
 {
     public class UpdateCategoryCommand : ICommand
     {
-        public UpdateCategoryCommand(string routingKey, Category category)
+        public UpdateCategoryCommand(Category category)
         {
-            RoutingKey = routingKey;
+            RoutingKey = category.Id.ToString();
             CommandCreatedDate = DateTime.UtcNow;
             Category = category;
         }

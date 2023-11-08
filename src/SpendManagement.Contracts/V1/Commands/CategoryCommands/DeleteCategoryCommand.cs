@@ -5,11 +5,11 @@ namespace SpendManagement.Contracts.V1.Commands.CategoryCommands
 {
     public class DeleteCategoryCommand : ICommand
     {
-        public DeleteCategoryCommand(string routingKey, Guid id)
+        public DeleteCategoryCommand(Guid categoryId)
         {
             CommandCreatedDate = DateTime.UtcNow;
-            RoutingKey = routingKey;
-            Id = id;
+            RoutingKey = categoryId.ToString();
+            Id = categoryId;
         }
 
         [IgnoreDataMember]

@@ -7,10 +7,10 @@ namespace SpendManagement.Contracts.V1.Commands.ReceiptCommands
     [DataContract]
     public class CreateReceiptCommand : ICommand
     {
-        public CreateReceiptCommand(string routingKey, Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
+        public CreateReceiptCommand(Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
         {
             CommandCreatedDate = DateTime.UtcNow;
-            RoutingKey = routingKey;
+            RoutingKey = receipt.Id.ToString();
             Receipt = receipt;
             ReceiptItems = receiptItems;
         }

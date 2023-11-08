@@ -6,9 +6,9 @@ namespace SpendManagement.Contracts.V1.Events.ReceiptEvents
 {
     public class UpdateReceiptEvent : IEvent
     {
-        public UpdateReceiptEvent(string routingKey, Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
+        public UpdateReceiptEvent(Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
         {
-            RoutingKey = routingKey;
+            RoutingKey = receipt.Id.ToString();
             Receipt = receipt;
             ReceiptItems = receiptItems;
             EventCreatedDate = DateTime.UtcNow;
@@ -25,6 +25,5 @@ namespace SpendManagement.Contracts.V1.Events.ReceiptEvents
 
         [DataMember(Order = 2)]
         public IEnumerable<ReceiptItem> ReceiptItems { get; set; } = null!;
-
     }
 }

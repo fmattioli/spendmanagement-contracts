@@ -6,9 +6,9 @@ namespace SpendManagement.Contracts.V1.Events.ReceiptEvents
 {
     public class CreatedReceiptEvent : IEvent
     {
-        public CreatedReceiptEvent(string routingKey, Receipt receipt, IEnumerable<ReceiptItem> receiptItem)
+        public CreatedReceiptEvent(Receipt receipt, IEnumerable<ReceiptItem> receiptItem)
         {
-            RoutingKey = routingKey;
+            RoutingKey = receipt.Id.ToString();
             Receipt = receipt;
             ReceiptItem = receiptItem;
             EventCreatedDate = DateTime.UtcNow;

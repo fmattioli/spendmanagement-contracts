@@ -6,10 +6,10 @@ namespace SpendManagement.Contracts.V1.Commands.CategoryCommands
 {
     public class CreateCategoryCommand : ICommand
     {
-        public CreateCategoryCommand(string routingKey, Category category)
+        public CreateCategoryCommand(Category category)
         {
             CommandCreatedDate = DateTime.UtcNow;
-            RoutingKey = routingKey;
+            RoutingKey = category.Id.ToString();
             Category = category;
         }
 
@@ -21,6 +21,5 @@ namespace SpendManagement.Contracts.V1.Commands.CategoryCommands
 
         [DataMember(Order = 1)]
         public Category Category { get; set; } = null!;
-
     }
 }

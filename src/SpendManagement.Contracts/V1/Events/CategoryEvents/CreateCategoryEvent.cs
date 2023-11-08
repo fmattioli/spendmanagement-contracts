@@ -6,11 +6,11 @@ namespace SpendManagement.Contracts.V1.Events.CategoryEvents
 {
     public class CreateCategoryEvent : IEvent
     {
-        public CreateCategoryEvent(string routingKey, Category category)
+        public CreateCategoryEvent(Category category)
         {
-            RoutingKey = routingKey;
+            RoutingKey = category.Id.ToString();
             Category = category;
-            EventCreatedDate = DateTime.UtcNow;
+            EventCreatedDate = category.CreatedDate;
         }
 
         [IgnoreDataMember]

@@ -5,10 +5,10 @@ namespace SpendManagement.Contracts.V1.Events.CategoryEvents
 {
     public class DeleteCategoryEvent : IEvent
     {
-        public DeleteCategoryEvent(string routingKey, Guid id)
+        public DeleteCategoryEvent(Guid categoryId)
         {
-            RoutingKey = routingKey;
-            Id = id;
+            RoutingKey = categoryId.ToString();
+            Id = categoryId;
             EventCreatedDate = DateTime.UtcNow;
         }
 

@@ -10,7 +10,7 @@
     <PackageLicenseExpression> AFL-1.1</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>27566574.jpg</PackageIcon>
-    <Version>2.0.5</Version>
+    <Version>3.0.1</Version>
     <Authors>Felipe Mattioli dos Santos</Authors>
   </PropertyGroup>
 

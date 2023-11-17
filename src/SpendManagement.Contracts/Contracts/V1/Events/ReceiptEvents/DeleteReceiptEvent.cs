@@ -5,10 +5,10 @@ namespace SpendManagement.Contracts.V1.Events.ReceiptEvents
 {
     public class DeleteReceiptEvent : IEvent
     {
-        public DeleteReceiptEvent(Guid receiptId)
+        public DeleteReceiptEvent(Guid id)
         {
-            RoutingKey = receiptId.ToString();
-            Id = receiptId;
+            RoutingKey = id.ToString();
+            Id = id;
             EventCreatedDate = DateTime.UtcNow;
         }
 

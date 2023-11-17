@@ -15,13 +15,13 @@
 
         public bool Validate()
         {
-            if(!string.IsNullOrEmpty(EstablishmentName) 
+            if (!string.IsNullOrEmpty(EstablishmentName)
                 && ReceiptDate.Date != DateTime.MinValue
                 && Id != Guid.Empty)
             {
                 return true;
             }
-            
+
             return false;
         }
     }

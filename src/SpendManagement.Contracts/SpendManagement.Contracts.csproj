@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -10,7 +10,7 @@
     <PackageLicenseExpression> AFL-1.1</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>27566574.jpg</PackageIcon>
-    <Version>3.0.1</Version>
+    <Version>3.1.0</Version>
     <Authors>Felipe Mattioli dos Santos</Authors>
   </PropertyGroup>
 
@@ -23,6 +23,9 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>

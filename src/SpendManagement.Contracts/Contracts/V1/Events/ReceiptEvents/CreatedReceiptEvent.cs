@@ -4,25 +4,17 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events.ReceiptEvents
 {
-    public class CreatedReceiptEvent : IEvent
+    public struct CreatedReceiptEvent(Receipt receipt, IEnumerable<ReceiptItem> receiptItem) : IEvent
     {
-        public CreatedReceiptEvent(Receipt receipt, IEnumerable<ReceiptItem> receiptItem)
-        {
-            RoutingKey = receipt.Id.ToString();
-            Receipt = receipt;
-            ReceiptItem = receiptItem;
-            EventCreatedDate = DateTime.UtcNow;
-        }
-
         [IgnoreDataMember]
-        public string RoutingKey { get; set; }
+        public string RoutingKey { get; set; } = receipt.Id.ToString();
 
-        public DateTime EventCreatedDate { get; set; }
+        public DateTime EventCreatedDate { get; set; } = DateTime.UtcNow;
 
         [DataMember(Order = 1)]
-        public Receipt Receipt { get; set; } = null!;
+        public Receipt Receipt { get; set; } = receipt;
 
         [DataMember(Order = 2)]
-        public IEnumerable<ReceiptItem> ReceiptItem { get; set; } = null!;
+        public IEnumerable<ReceiptItem> ReceiptItem { get; set; } = receiptItem;
     }
 }

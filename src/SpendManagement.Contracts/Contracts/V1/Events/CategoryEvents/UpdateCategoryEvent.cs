@@ -4,22 +4,15 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events.CategoryEvents
 {
-    public class UpdateCategoryEvent : IEvent
+    public struct UpdateCategoryEvent(Category category) : IEvent
     {
-        public UpdateCategoryEvent(Category category)
-        {
-            RoutingKey = category.Id.ToString();
-            Category = category;
-            EventCreatedDate = DateTime.UtcNow;
-        }
+        [IgnoreDataMember]
+        public string RoutingKey { get; set; } = category.Id.ToString();
 
         [IgnoreDataMember]
-        public string RoutingKey { get; set; }
-
-        [IgnoreDataMember]
-        public DateTime EventCreatedDate { get; set; }
+        public DateTime EventCreatedDate { get; set; } = DateTime.UtcNow;
 
         [DataMember(Order = 1)]
-        public Category Category { get; set; } = null!;
+        public Category Category { get; set; } = category;
     }
 }

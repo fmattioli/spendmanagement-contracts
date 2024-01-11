@@ -3,22 +3,15 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events.CategoryEvents
 {
-    public class DeleteCategoryEvent : IEvent
+    public struct DeleteCategoryEvent(Guid id) : IEvent
     {
-        public DeleteCategoryEvent(Guid id)
-        {
-            RoutingKey = id.ToString();
-            Id = id;
-            EventCreatedDate = DateTime.UtcNow;
-        }
+        [IgnoreDataMember]
+        public string RoutingKey { get; set; } = id.ToString();
 
         [IgnoreDataMember]
-        public string RoutingKey { get; set; }
-
-        [IgnoreDataMember]
-        public DateTime EventCreatedDate { get; set; }
+        public DateTime EventCreatedDate { get; set; } = DateTime.UtcNow;
 
         [DataMember(Order = 1)]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = id;
     }
 }

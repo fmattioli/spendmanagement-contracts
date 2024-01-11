@@ -5,26 +5,18 @@ using System.Runtime.Serialization;
 namespace SpendManagement.Contracts.V1.Commands.ReceiptCommands
 {
     [DataContract]
-    public class CreateReceiptCommand : ICommand
+    public struct CreateReceiptCommand(Receipt receipt, IEnumerable<ReceiptItem> receiptItems) : ICommand
     {
-        public CreateReceiptCommand(Receipt receipt, IEnumerable<ReceiptItem> receiptItems)
-        {
-            CommandCreatedDate = DateTime.UtcNow;
-            RoutingKey = receipt.Id.ToString();
-            Receipt = receipt;
-            ReceiptItems = receiptItems;
-        }
+        [IgnoreDataMember]
+        public string RoutingKey { get; set; } = receipt.Id.ToString();
 
         [IgnoreDataMember]
-        public string RoutingKey { get; set; }
-
-        [IgnoreDataMember]
-        public DateTime CommandCreatedDate { get; set; }
+        public DateTime CommandCreatedDate { get; set; } = DateTime.UtcNow;
 
         [DataMember(Order = 1)]
-        public Receipt Receipt { get; set; } = null!;
+        public Receipt Receipt { get; set; } = receipt;
 
         [DataMember(Order = 2)]
-        public IEnumerable<ReceiptItem> ReceiptItems { get; set; } = null!;
+        public IEnumerable<ReceiptItem> ReceiptItems { get; set; } = receiptItems;
     }
 }

@@ -4,22 +4,15 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Commands.CategoryCommands
 {
-    public class UpdateCategoryCommand : ICommand
+    public struct UpdateCategoryCommand(Category category) : ICommand
     {
-        public UpdateCategoryCommand(Category category)
-        {
-            RoutingKey = category.Id.ToString();
-            CommandCreatedDate = DateTime.UtcNow;
-            Category = category;
-        }
+        [IgnoreDataMember]
+        public string RoutingKey { get; set; } = category.Id.ToString();
 
         [IgnoreDataMember]
-        public string RoutingKey { get; set; }
-
-        [IgnoreDataMember]
-        public DateTime CommandCreatedDate { get; set; }
+        public DateTime CommandCreatedDate { get; set; } = DateTime.UtcNow;
 
         [DataMember(Order = 1)]
-        public Category Category { get; set; } = null!;
+        public Category Category { get; set; } = category;
     }
 }

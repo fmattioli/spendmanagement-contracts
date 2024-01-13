@@ -1,21 +1,13 @@
 ﻿namespace SpendManagement.Contracts.V1.Entities
 {
-    public class ReceiptItem
+    public class ReceiptItem(Guid id, string itemName, short quantity, decimal itemPrice, string observation)
     {
-        public ReceiptItem(Guid id, string itemName, short quantity, decimal itemPrice, string observation)
-        {
-            Id = id;
-            ItemName = itemName;
-            Quantity = quantity;
-            ItemPrice = itemPrice;
-            Observation = observation;
-        }
-
-        public Guid Id { get; set; }
-        public string ItemName { get; set; }
-        public short Quantity { get; set; }
-        public decimal ItemPrice { get; set; }
-        public string Observation { get; set; }
+        public Guid Id { get; set; } = id;
+        public string ItemName { get; set; } = itemName;
+        public short Quantity { get; set; } = quantity;
+        public decimal ItemPrice { get; set; } = itemPrice;
+        public string Observation { get; set; } = observation;
         public decimal TotalPrice { get { return ItemPrice * Quantity; } }
+        public decimal ItemDiscount { get; set; }
     }
 }

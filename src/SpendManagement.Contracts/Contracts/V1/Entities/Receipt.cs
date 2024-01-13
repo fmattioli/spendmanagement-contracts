@@ -1,19 +1,13 @@
 ﻿namespace SpendManagement.Contracts.V1.Entities
 {
-    public class Receipt
+    public class Receipt(Guid id, Guid categoryId, string establishmentName, DateTime receiptDate)
     {
-        public Receipt(Guid id, Guid categoryId, string establishmentName, DateTime receiptDate)
-        {
-            Id = id;
-            CategoryId = categoryId;
-            EstablishmentName = establishmentName;
-            ReceiptDate = receiptDate;
-        }
-
-        public Guid Id { get; set; }
-        public Guid CategoryId { get; set; }
-        public string EstablishmentName { get; set; }
-        public DateTime ReceiptDate { get; set; }
+        public Guid Id { get; set; } = id;
+        public Guid CategoryId { get; set; } = categoryId;
+        public string EstablishmentName { get; set; } = establishmentName;
+        public DateTime ReceiptDate { get; set; } = receiptDate;
+        public decimal Total { get; set; }
+        public decimal Discount { get; set; }
 
         public bool Validate()
         {

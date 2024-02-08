@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events.RecurringReceiptEvents
 {
-    public struct DeleteRecurringReceiptCommand(Guid id) : IEvent
+    public struct DeleteRecurringReceiptEvent(Guid id) : IEvent
     {
         [IgnoreDataMember]
         public string RoutingKey { get; set; } = id.ToString();

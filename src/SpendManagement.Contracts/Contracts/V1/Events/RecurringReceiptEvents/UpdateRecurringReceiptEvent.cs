@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 
 namespace SpendManagement.Contracts.V1.Events.RecurringReceiptEvents
 {
-    public struct CreateRecurringReceiptCommand(RecurringReceipt recurringReceipt) : IEvent
+    public struct UpdateRecurringReceiptEvent(RecurringReceipt recurringReceipt) : IEvent
     {
         [IgnoreDataMember]
         public string RoutingKey { get; set; } = recurringReceipt.Id.ToString();
@@ -14,6 +14,5 @@ namespace SpendManagement.Contracts.V1.Events.RecurringReceiptEvents
 
         [DataMember(Order = 1)]
         public RecurringReceipt RecurringReceipt { get; set; } = recurringReceipt;
-
     }
 }
